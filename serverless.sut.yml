@@ -1,0 +1,24 @@
+service: api-v2-iam-auth-SUT
+
+custom:
+  stage: ${opt:stage, self:provider.stage}
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: dev
+  tags:
+    lumigo:auto-trace: true
+
+plugins:
+  - serverless-plugin-typescript
+
+functions:
+  helloWorld:
+    handler: src/helloHandler.default
+    events:
+      - httpApi:
+          method: get
+          path: /hello
+          authorizer:
+            type: aws_iam
