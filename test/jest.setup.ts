@@ -8,8 +8,8 @@ const region = process.env.AWS_REGION || 'us-east-1';
 const stage = process.env.NODE_ENV || 'dev';
 
 const setup = async () => {
-  const testStackName = `ra-api-v2-iam-auth-TEST-${stage}`;
-  const sutStackName = `ra-api-v2-iam-auth-SUT-${stage}`;
+  const testStackName = `api-v2-iam-auth-TEST-${stage}`;
+  const sutStackName = `api-v2-iam-auth-SUT-${stage}`;
 
   const testStack = await getStack(testStackName);
   const sutStack = await getStack(sutStackName);
