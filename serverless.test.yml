@@ -14,6 +14,9 @@ provider:
   deploymentBucket:
     name: com.reference-architecture.deploys
     serverSideEncryption: AES256
+  lambdaHashingVersion: "20201221"
+  httpApi:
+    useProviderTags: true
   tags:
     lumigo:auto-trace: true
 
