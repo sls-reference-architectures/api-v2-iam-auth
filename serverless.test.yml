@@ -11,12 +11,16 @@ provider:
   stage: dev
   environment:
     SUT_API_URL: ${self:custom.sutApiUrl}
+  deploymentBucket:
+    name: com.reference-architecture.deploys
+    serverSideEncryption: AES256
   tags:
     lumigo:auto-trace: true
 
 plugins:
   - serverless-plugin-typescript
   - serverless-iam-roles-per-function
+  - serverless-deployment-bucket
 
 functions:
   allowed:

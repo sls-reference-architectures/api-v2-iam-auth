@@ -7,11 +7,15 @@ provider:
   name: aws
   runtime: nodejs14.x
   stage: dev
+  deploymentBucket:
+    name: com.reference-architecture.deploys
+    serverSideEncryption: AES256
   tags:
     lumigo:auto-trace: true
 
 plugins:
   - serverless-plugin-typescript
+  - serverless-deployment-bucket
 
 functions:
   helloWorld:
