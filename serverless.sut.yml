@@ -14,7 +14,7 @@ provider:
     lumigo:auto-trace: true
 
 plugins:
-  - serverless-plugin-typescript
+  - serverless-esbuild
   - serverless-deployment-bucket
 
 functions:
