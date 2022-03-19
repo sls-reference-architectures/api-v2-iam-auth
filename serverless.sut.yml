@@ -21,7 +21,7 @@ plugins:
   - serverless-deployment-bucket
 
 functions:
-  helloWorld:
+  helloWorldX:
     handler: src/helloHandler.default
     events:
       - httpApi:
