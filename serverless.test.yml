@@ -26,7 +26,7 @@ plugins:
   - serverless-deployment-bucket
 
 functions:
-  allowedX:
+  allowed:
     handler: src/testHandler.default
     events:
       - httpApi:
@@ -37,7 +37,7 @@ functions:
         Action: execute-api:Invoke
         Resource: !Sub arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${self:custom.sutApiId}/*/GET/hello
   
-  disallowedX:
+  disallowed:
     handler: src/testHandler.default
     events:
       - httpApi:
