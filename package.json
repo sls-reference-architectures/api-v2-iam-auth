@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "rm -rf .build && npx tsc",
-    "deploy:sut": "npx sls deploy --config serverless.sut.yml --verbose",
-    "deploy:test.stack": "npx sls deploy --config serverless.test.yml --verbose",
+    "deploy:sut": "npx sls deploy --config serverless.sut.yml --suppress",
+    "deploy:test.stack": "npx sls deploy --config serverless.test.yml --suppress",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint '**.*.{ts,tsx}' --fix",
     "prepare": "husky install",
