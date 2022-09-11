@@ -1,6 +1,7 @@
 {
   "extends": "@tsconfig/node16/tsconfig",
   "compilerOptions": {
+    "declaration": true,
     "outDir": ".build",
     "sourceMap": true,
   }
