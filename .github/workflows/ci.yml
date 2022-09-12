@@ -36,3 +36,5 @@
             run: npm run deploy:test.stack
           - name: Run E2E tests
             run: npm run test:e2e
+            env:
+              NODE_ENV: dev 
