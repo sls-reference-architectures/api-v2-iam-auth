@@ -19,7 +19,7 @@
     "url": "git+https://github.com/sls-reference-architectures/api-v2-iam-auth.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Seth Orell",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sls-reference-architectures/api-v2-iam-auth/issues"
