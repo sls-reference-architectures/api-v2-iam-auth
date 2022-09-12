@@ -6,7 +6,7 @@ import axios, { AxiosRequestConfig } from "axios";
 const handler = async (
   event: APIGatewayProxyEvent
 ): Promise<APIGatewayProxyResult> => {
-  Logger.debug("Calling IAM protected endpoint.", { event });
+  Logger.debug("Calling IAM protected endpoint", { event });
   const options: AxiosRequestConfig = {
     baseURL: process.env.SUT_API_URL,
     validateStatus: () => true,
