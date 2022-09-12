@@ -30,7 +30,9 @@
             run: npm test
           # - name: Run int tests
           #   run: npm run test:int
-          - name: Deploy
-            run: npm run deploy
+          - name: Deploy SUT
+            run: npm run deploy:sut
+          - name: Deploy Test Stack
+            run: npm run deploy:test.stack
           - name: Run E2E tests
             run: npm run test:e2e
