@@ -11,8 +11,8 @@
     "lint:fix": "eslint '**.*.{ts,tsx}' --fix",
     "prepare": "husky install",
     "prettier": "npx prettier --write",
-    "remove:sut": "npx sls remove --config serverless.sut.yml --conceal",
-    "remove:test.stack": "npx sls remove --config serverless.test.yml --conceal",
+    "remove:sut": "npx sls remove --config serverless.sut.yml",
+    "remove:test.stack": "npx sls remove --config serverless.test.yml",
     "test": "npm run lint && npx jest unit.test",
     "test:e2e": "npx jest e2e.test  --config jest.config.e2e.js"
   },
