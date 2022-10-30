@@ -1,5 +1,7 @@
 service: api-v2-iam-auth-TEST
 
+frameworkVersion: '3'
+
 custom:
   stage: ${opt:stage, self:provider.stage}
   sutApiId: ${cf:api-v2-iam-auth-SUT-${self:custom.stage}.HttpApiId}

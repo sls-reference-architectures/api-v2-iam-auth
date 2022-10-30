@@ -1,5 +1,7 @@
 service: api-v2-iam-auth-SUT
 
+frameworkVersion: '3'
+
 custom:
   stage: ${opt:stage, self:provider.stage}
 
