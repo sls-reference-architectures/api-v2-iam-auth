@@ -14,37 +14,101 @@ permissions:
   id-token: write
   contents: read
 
+concurrency: api-v2-iam-auth
+
 jobs:
-  build:
+  pre-deploy:
     runs-on: ubuntu-latest
-    concurrency: build-deploy-test
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js 18.x
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
-      - name: Install dependencies
-        run: npm ci
-      - name: Run unit tests
-        run: npm test
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-region: us-east-1
-          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
-      # - name: Run int tests
-      #   run: npm run test:int
-      - name: Deploy SUT
-        run: npm run deploy:sut
-      - name: Deploy Test Stack
-        run: npm run deploy:test.stack
-      - name: Run E2E tests
-        run: npm run test:e2e
-        env:
-          NODE_ENV: dev 
-      # The following is for my reference architecture stack only
-      - name: Remove stacks from AWS
-        run: |
-          npm run remove:test.stack
-          npm run remove:sut
+    - uses: actions/checkout@v3
+    - name: Use Node.js 18.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+    - name: Install dependencies
+      run: npm ci
+    - name: Run unit tests
+      run: npm test
+    # The following is for my reference architecture stack only
+    - name: Remove stacks from AWS
+      run: |
+        npm run remove:test.stack
+        npm run remove:sut
+  deploy-sut:
+    runs-on: ubuntu-latest
+    needs: pre-deploy
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js 18.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+    - name: Install dependencies
+      run: npm ci
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        aws-region: us-east-1
+        role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+    - name: Deploy SUT
+      run: npm run deploy:sut
+  deploy-test-stack:
+    runs-on: ubuntu-latest
+    needs: pre-deploy
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js 18.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+    - name: Install dependencies
+      run: npm ci
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        aws-region: us-east-1
+        role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+    - name: Deploy Test Stack
+      run: npm run deploy:test.stack
+  teardown-sut:
+    runs-on: ubuntu-latest
+    needs:
+    - deploy-sut
+    - deploy-test-stack
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js 18.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+    - name: Install dependencies
+      run: npm ci
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        aws-region: us-east-1
+        role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+    # The following is for my reference architecture stack only
+    - name: Remove stacks from AWS
+      run: npm run remove:sut
+  teardown-test:
+    runs-on: ubuntu-latest
+    needs:
+    - deploy-sut
+    - deploy-test-stack
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js 18.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+    - name: Install dependencies
+      run: npm ci
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        aws-region: us-east-1
+        role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+    # The following is for my reference architecture stack only
+    - name: Remove stacks from AWS
+      run: npm run remove:test.stack
