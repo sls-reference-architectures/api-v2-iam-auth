@@ -49,7 +49,7 @@ jobs:
       run: npm run deploy:sut
   deploy-test-stack:
     runs-on: ubuntu-latest
-    needs: pre-deploy
+    needs: deploy-sut
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js 18.x
@@ -67,9 +67,7 @@ jobs:
       run: npm run deploy:test.stack
   test-e2e:
     runs-on: ubuntu-latest
-    needs:
-    - deploy-sut
-    - deploy-test-stack
+    needs: deploy-test-stack
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js 18.x
