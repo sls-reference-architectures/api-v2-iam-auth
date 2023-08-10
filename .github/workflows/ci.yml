@@ -29,11 +29,6 @@ jobs:
       run: npm ci
     - name: Run unit tests
       run: npm test
-    # The following is for my reference architecture stack only
-    - name: Remove stacks from AWS
-      run: |
-        npm run remove:test.stack
-        npm run remove:sut
   deploy-sut:
     runs-on: ubuntu-latest
     needs: pre-deploy
