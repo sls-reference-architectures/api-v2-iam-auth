@@ -87,6 +87,8 @@ jobs:
         role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
     - name: Test E2E
       run: npm run test:e2e
+      env:
+        NODE_ENV: dev
   teardown-sut:
     runs-on: ubuntu-latest
     needs: test-e2e
