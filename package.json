@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/sls-reference-architectures/api-v2-iam-auth#readme",
   "devDependencies": {
-    "@aws-sdk/client-cloudformation": "^3.199.0",
+    "@aws-sdk/client-cloudformation": "^3.388.0",
     "@tsconfig/node16": "^1.0.3",
     "@types/aws-lambda": "^8.10.108",
     "@types/aws4": "^1.11.2",
