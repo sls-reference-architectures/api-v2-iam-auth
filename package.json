@@ -28,10 +28,10 @@
   },
   "homepage": "https://github.com/sls-reference-architectures/api-v2-iam-auth#readme",
   "devDependencies": {
-    "@aws-sdk/client-cloudformation": "^3.388.0",
-    "@tsconfig/node16": "^1.0.3",
+    "@aws-sdk/client-cloudformation": "^3.405.0",
+    "@tsconfig/node16": "^16.1.1",
     "@types/aws-lambda": "^8.10.108",
-    "@types/aws4": "^1.11.2",
+    "@types/aws4": "^1.11.3",
     "@types/axios": "^0.14.0",
     "@types/jest": "^29.5.3",
     "@types/node": "^18.7.16",
@@ -59,8 +59,8 @@
   "dependencies": {
     "@dazn/lambda-powertools-logger": "^1.28.1",
     "aws4": "^1.11.0",
-    "aws4-axios": "^2.4.9",
-    "axios": "^0.27.2"
+    "aws4-axios": "^3.3.0",
+    "axios": "^1.5.0"
   },
   "lint-staged": {
     "*.{js,ts}": "eslint --cache --fix",
