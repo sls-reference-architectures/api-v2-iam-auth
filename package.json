@@ -30,7 +30,7 @@
   "devDependencies": {
     "@aws-sdk/client-cloudformation": "^3.428.0",
     "@tsconfig/node16": "^16.1.1",
-    "@types/aws-lambda": "^8.10.124",
+    "@types/aws-lambda": "^8.10.125",
     "@types/aws4": "^1.11.5",
     "@types/axios": "^0.14.0",
     "@types/jest": "^29.5.6",
