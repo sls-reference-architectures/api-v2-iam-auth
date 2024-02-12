@@ -54,7 +54,7 @@
     "serverless-deployment-bucket": "^1.6.0",
     "serverless-esbuild": "^1.50.2",
     "serverless-iam-roles-per-function": "^3.2.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.3.3"
   },
   "dependencies": {
     "@dazn/lambda-powertools-logger": "^1.28.1",
