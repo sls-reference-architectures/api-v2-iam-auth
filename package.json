@@ -34,7 +34,7 @@
     "@types/aws4": "^1.11.6",
     "@types/axios": "^0.14.0",
     "@types/jest": "^29.5.12",
-    "@types/node": "^20.11.24",
+    "@types/node": "^20.11.27",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
     "esbuild": "^0.20.1",
