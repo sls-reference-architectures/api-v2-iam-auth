@@ -50,7 +50,7 @@
     "jest": "^29.7.0",
     "lint-staged": "^15.2.5",
     "prettier": "^3.2.5",
-    "serverless": "^3.38.0",
+    "serverless": "^4.1.15",
     "serverless-deployment-bucket": "^1.6.0",
     "serverless-esbuild": "^1.51.0",
     "serverless-iam-roles-per-function": "^3.2.0",
