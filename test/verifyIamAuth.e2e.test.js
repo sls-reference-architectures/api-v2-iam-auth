@@ -1,9 +1,9 @@
-import axios, { AxiosRequestConfig } from 'axios';
+import axios from 'axios';
 
 const testApiUrl = process.env.TEST_API_URL;
 
 describe('When making a client-to-server M2M call', () => {
-  const axiosOptions: AxiosRequestConfig = {
+  const axiosOptions = {
     baseURL: testApiUrl,
     validateStatus: () => true,
   };

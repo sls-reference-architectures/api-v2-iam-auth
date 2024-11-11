@@ -1,11 +1,10 @@
 import Logger from '@dazn/lambda-powertools-logger';
-import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
 import aws4Interceptor from 'aws4-axios';
-import axios, { AxiosRequestConfig } from 'axios';
+import axios from 'axios';
 
-const handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
+const handler = async (event) => {
   Logger.debug('Calling IAM protected endpoint', { event });
-  const options: AxiosRequestConfig = {
+  const options = {
     baseURL: process.env.SUT_API_URL,
     validateStatus: () => true,
   };

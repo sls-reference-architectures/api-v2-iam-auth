@@ -1,8 +1,4 @@
-import {
-  CloudFormationClient,
-  DescribeStacksCommand,
-  Stack,
-} from '@aws-sdk/client-cloudformation';
+import { CloudFormationClient, DescribeStacksCommand } from '@aws-sdk/client-cloudformation';
 
 const region = process.env.AWS_REGION || 'us-east-1';
 const stage = process.env.NODE_ENV || 'dev';
@@ -20,7 +16,7 @@ const setup = async () => {
   process.env.NODE_ENV = stage;
 };
 
-const getStack = async (stackName: string): Promise<Stack> => {
+const getStack = async (stackName) => {
   const cf = new CloudFormationClient({ region });
   const stackResult = await cf.send(
     new DescribeStacksCommand({
@@ -35,8 +31,6 @@ const getStack = async (stackName: string): Promise<Stack> => {
   return stack;
 };
 
-const getApiUrl = (stack: Stack) => (
-  stack.Outputs?.find((o) => o.OutputKey === 'HttpApiUrl')?.OutputValue
-);
+const getApiUrl = (stack) => stack.Outputs?.find((o) => o.OutputKey === 'HttpApiUrl')?.OutputValue;
 
 export default setup;
