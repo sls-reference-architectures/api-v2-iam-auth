@@ -9,7 +9,7 @@
     "deploy:test.stack": "npx sls deploy --config serverless.test.yml --conceal",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint '**.*.{ts,tsx}' --fix",
-    "prepare": "husky install",
+    "prepare": "husky",
     "prettier": "npx prettier --write",
     "remove:sut": "npx sls remove --config serverless.sut.yml",
     "remove:test.stack": "npx sls remove --config serverless.test.yml",
