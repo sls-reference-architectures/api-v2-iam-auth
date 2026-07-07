@@ -34,7 +34,7 @@
     "@types/aws4": "^1.11.6",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.13.4",
-    "esbuild": "^0.24.0",
+    "esbuild": "^0.25.0",
     "eslint": "^8.57.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.1.0",
@@ -47,7 +47,7 @@
     "prettier": "^3.3.3",
     "serverless": "^3.39.0",
     "serverless-deployment-bucket": "^1.6.0",
-    "serverless-esbuild": "^1.54.6",
+    "serverless-esbuild": "^1.57.2",
     "serverless-iam-roles-per-function": "^3.2.0"
   },
   "dependencies": {
