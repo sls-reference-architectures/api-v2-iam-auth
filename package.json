@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/sls-reference-architectures/api-v2-iam-auth#readme",
   "devDependencies": {
-    "@aws-sdk/client-cloudformation": "^3.693.0",
+    "@aws-sdk/client-cloudformation": "^3.1081.0",
     "@swc/core": "^1.10.16",
     "@swc/jest": "^0.2.37",
     "@types/aws-lambda": "^8.10.145",
@@ -45,7 +45,7 @@
     "jest-extended": "^4.0.2",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
-    "serverless": "^3.39.0",
+    "serverless": "^4.38.1",
     "serverless-deployment-bucket": "^1.6.0",
     "serverless-esbuild": "^1.57.2",
     "serverless-iam-roles-per-function": "^3.2.0"
