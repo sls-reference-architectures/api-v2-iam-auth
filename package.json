@@ -54,7 +54,7 @@
     "@dazn/lambda-powertools-logger": "^1.28.1",
     "aws4": "^1.13.2",
     "aws4-axios": "^3.3.8",
-    "axios": "^1.7.7"
+    "axios": "^1.18.1"
   },
   "lint-staged": {
     "*.{js,ts}": "eslint --cache --fix",
