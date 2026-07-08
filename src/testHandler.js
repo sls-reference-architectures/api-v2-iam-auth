@@ -2,7 +2,7 @@ import Logger from '@dazn/lambda-powertools-logger';
 import aws4Interceptor from 'aws4-axios';
 import axios from 'axios';
 
-const handler = async (event) => {
+export const handler = async (event) => {
   Logger.debug('Calling IAM protected endpoint', { event });
   const options = {
     baseURL: process.env.SUT_API_URL,
@@ -23,5 +23,3 @@ const handler = async (event) => {
     body: 'Done',
   };
 };
-
-export default handler;

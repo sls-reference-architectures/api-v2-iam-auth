@@ -22,7 +22,7 @@ plugins:
 
 functions:
   helloWorld:
-    handler: src/helloHandler.default
+    handler: src/helloHandler.handler
     events:
       - httpApi:
           method: get
