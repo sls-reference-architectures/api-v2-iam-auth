@@ -19,7 +19,6 @@ provider:
 
 plugins:
   - serverless-esbuild
-  - serverless-deployment-bucket
 
 functions:
   helloWorld:
