@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v7
-    - name: Use Node.js 20.x
+    - name: Use Node.js 24.x
       uses: actions/setup-node@v6
       with:
         node-version: 24.x
@@ -35,7 +35,7 @@ jobs:
     needs: pre-deploy
     steps:
     - uses: actions/checkout@v7
-    - name: Use Node.js 20.x
+    - name: Use Node.js 24.x
       uses: actions/setup-node@v6
       with:
         node-version: 24.x
@@ -54,7 +54,7 @@ jobs:
     needs: deploy-sut
     steps:
     - uses: actions/checkout@v7
-    - name: Use Node.js 20.x
+    - name: Use Node.js 24.x
       uses: actions/setup-node@v6
       with:
         node-version: 24.x
@@ -73,7 +73,7 @@ jobs:
     needs: deploy-test-stack
     steps:
     - uses: actions/checkout@v7
-    - name: Use Node.js 20.x
+    - name: Use Node.js 24.x
       uses: actions/setup-node@v6
       with:
         node-version: 24.x
@@ -94,7 +94,7 @@ jobs:
     needs: test-e2e
     steps:
     - uses: actions/checkout@v7
-    - name: Use Node.js 20.x
+    - name: Use Node.js 24.x
       uses: actions/setup-node@v6
       with:
         node-version: 24.x
@@ -114,7 +114,7 @@ jobs:
     needs: teardown-test
     steps:
     - uses: actions/checkout@v7
-    - name: Use Node.js 20.x
+    - name: Use Node.js 24.x
       uses: actions/setup-node@v6
       with:
         node-version: 24.x
