@@ -31,7 +31,7 @@
     "@swc/core": "^1.10.16",
     "@swc/jest": "^0.2.37",
     "esbuild": "^0.25.0",
-    "eslint": "^8.57.0",
+    "eslint": "^10.7.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
