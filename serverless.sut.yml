@@ -6,6 +6,7 @@ custom:
   stage: ${opt:stage, self:provider.stage}
 
 provider:
+  architecture: arm64
   name: aws
   runtime: nodejs24.x
   stage: dev

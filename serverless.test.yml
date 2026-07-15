@@ -8,6 +8,7 @@ custom:
   sutApiUrl: ${cf:api-v2-iam-auth-SUT-${self:custom.stage}.HttpApiUrl}
 
 provider:
+  architecture: arm64
   name: aws
   runtime: nodejs24.x
   stage: dev
