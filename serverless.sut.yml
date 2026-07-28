@@ -15,8 +15,6 @@ provider:
     serverSideEncryption: AES256
   httpApi:
     useProviderTags: true
-  tags:
-    lumigo:auto-trace: true
 
 plugins:
   - serverless-esbuild
