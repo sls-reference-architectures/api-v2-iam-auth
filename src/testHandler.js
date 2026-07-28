@@ -1,9 +1,11 @@
-import Logger from '@dazn/lambda-powertools-logger';
+import { Logger } from '@aws-lambda-powertools/logger';
 import aws4Interceptor from 'aws4-axios';
 import axios from 'axios';
 
+const logger = new Logger({ serviceName: 'api-v2-iam-auth-TEST' });
+
 export const handler = async (event) => {
-  Logger.debug('Calling IAM protected endpoint', { event });
+  logger.debug('Calling IAM protected endpoint', { event });
   const options = {
     baseURL: process.env.SUT_API_URL,
     validateStatus: () => true,
@@ -16,7 +18,7 @@ export const handler = async (event) => {
   });
   axios.interceptors.request.use(interceptor);
   const { status } = await axios.get('/hello', options);
-  Logger.debug('Finished with axios call', { status });
+  logger.debug('Finished with axios call', { status });
 
   return {
     statusCode: status,
